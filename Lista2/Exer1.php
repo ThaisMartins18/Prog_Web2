@@ -1,6 +1,14 @@
 <?php
 
-// Função para verificar se o número é positivo, negativo ou igual a zero
+
+/*
+
+Crie um algoritmo que receba um número digitado pelo usuário e verifique se esse valor é 
+positivo, negativo ou igual a zero. A saída deve ser: "Valor Positivo", 
+"Valor Negativo" ou "Igual a Zero".
+
+*/
+
 function verificarNumero($numero) {
     if ($numero > 0) {
         return "Valor Positivo";
@@ -11,11 +19,9 @@ function verificarNumero($numero) {
     }
 }
 
-// Solicitar ao usuário que digite um número
 echo "Digite um número: ";
 $numero = readline();
 
-// Chamar a função para verificar o número e imprimir o resultado
 echo verificarNumero($numero);
 
 ?>
