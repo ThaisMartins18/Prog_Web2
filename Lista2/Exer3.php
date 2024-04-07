@@ -1,11 +1,9 @@
 <?php
 
 /*
-
 Escreva um programa para calcular a soma dos dois valores 
 de entrada. Se os dois valores forem iguais,
 retorne o triplo da soma.
-
 */
 
 function calcularSoma($valor1, $valor2) {

@@ -1,11 +1,9 @@
 <?php
 
 /*
-
 Escreva um programa que leia 7 números diferentes, imprima o 
 menor valor e imprima a posição do menor valor 
 na sequência de entrada.
-
 */
 $numeros = array();
 
