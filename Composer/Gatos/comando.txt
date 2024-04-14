@@ -1,0 +1,23 @@
+php -S localhost:8080 -t public/
+
+Controllers
+    pizzascontroller
+    gatoscontroller
+
+
+DAO
+    pizzasDAO
+    gatosDAO
+
+Domain
+    pizzas
+    gatosc
+
+Views
+    pizzas<--pasta
+        inserir_pizzas
+    gatos<--pasta
+        inserir_gatos
+
+
+bootstrap <-- rotas        
