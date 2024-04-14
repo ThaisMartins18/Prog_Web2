@@ -1,6 +1,6 @@
 <?php
 
-namespace P1_PHP\Models\Domain;
+namespace Gatos\Models\Domain;
 
 class Gatos{
 

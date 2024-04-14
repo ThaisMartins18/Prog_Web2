@@ -1,9 +1,9 @@
 <?php
 
-namespace P1_PHP\Controllers;
+namespace Gatos\Controllers;
 
-use P1_PHP\Models\DAO\GatosDAO;
-use P1_PHP\Models\Domain\Gatos;
+use Gatos\Models\DAO\GatosDAO;
+use Gatos\Models\Domain\Gatos;
 
 class GatosController{
     public function inserir($params){

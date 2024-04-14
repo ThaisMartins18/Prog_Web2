@@ -1,8 +1,8 @@
 <?php
 
-namespace P1_PHP\Models\DAO;
+namespace Gatos\Models\DAO;
 
-use P1_PHP\Models\Domain\Gatos;
+use Gatos\Models\Domain\Gatos;
 
 class GatosDAO{
 

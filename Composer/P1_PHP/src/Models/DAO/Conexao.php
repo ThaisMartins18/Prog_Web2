@@ -1,6 +1,6 @@
 <?php
 
-namespace P1_PHP\Models\DAO;
+namespace Gatos\Models\DAO;
 
 use PDO;
 
@@ -9,7 +9,7 @@ class Conexao {
     private $conexao;
 
     public function __construct(){
-        $this->conexao = new PDO("mysql:host=localhost; dbname=mydb", "root", "");
+        $this->conexao = new PDO("mysql:host=localhost; dbname=test", "root", "");
     }
 
     public function getConexao(){

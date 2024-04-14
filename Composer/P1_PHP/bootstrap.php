@@ -40,9 +40,9 @@ $r->post('/exer4/resposta', function(){
 });*/
 
 //Chamando o formulário para inserir categoria
-$r->get('/categoria/inserir', 'Gatos\Controllers\GatosController@inserir');
+$r->get('/gatos/inserir', 'Gatos\Controllers\GatosController@inserir');
 
-$r->post('/categoria/novo', 'Gatos\Controllers\GatosController@novo');
+$r->post('/gatos/novo', 'Gatos\Controllers\GatosController@novo');
 
 #ROTAS
 
@@ -62,6 +62,3 @@ if ($resultado instanceof Closure){
     $resultado = $resultado[1];
     echo $controller->$resultado($r->getParams());
 }
-
-
-
