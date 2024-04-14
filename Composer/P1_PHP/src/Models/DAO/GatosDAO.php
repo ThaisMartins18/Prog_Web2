@@ -21,5 +21,13 @@ class GatosDAO{
         } catch(\Exception $e){
             return 0;
         }       
+        try{
+            $sql = "INSERT INTO gatos (cor_olhos) VALUES (:cor_olhos)";
+            $p = $this->conexao->getConexao()->prepare($sql);
+            $p->bindValue(":cor_olhos", $gatos->getCorOlhos());
+            return $p->execute();
+        } catch(\Exception $e){
+            return 0;
+        }       
     }
 }
