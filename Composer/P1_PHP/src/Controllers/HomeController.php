@@ -8,8 +8,8 @@ class HomeController{
         return "Olá Mundo!";
     }
 
-    public function formExer1($params){
-        require_once("../src/views/exer1.html");
+    public function InsertGatos($params){
+        require_once("../src/views/gatos/inserir_gatos.html");
     }
 
 }

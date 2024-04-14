@@ -17,17 +17,15 @@ $r->get('/olapessoa/{nome}', function($params){
     return 'Olá'.$params[1]; 
 } );
 
-$r->get('/exer1/formulario', 
+$r->get('/inserir_gatos', 
     'Gatos\Controllers\HomeController@formExer1');
 
-$r->post('/exer1/resposta', function(){
-    $valor1 = $_POST['valor1'];
-    $valor2 = $_POST['valor2'];
-    $soma = $valor1 + $valor2;
-    return "A soma é: {$soma}";
+$r->post('/inserir_gatos/resposta', function(){
+    $cor_pelagem = $_POST['cor_pelagem'];
+    $cor_olhos = $_POST['cor_olhos'];
 });
 
-$r->get('/exer4/formulario', function(){
+/*$r->get('/exer4/formulario', function(){
     require_once('exer4.html');
 });
 
@@ -39,12 +37,12 @@ $r->post('/exer4/resposta', function(){
         $resposta .= "$valor x $i = $resultado<br/>";
     }
     return $resposta;
-});
+});*/
 
 //Chamando o formulário para inserir categoria
-$r->get('/categoria/inserir', 'Gatos\Controllers\CategoriaController@inserir');
+$r->get('/categoria/inserir', 'Gatos\Controllers\GatosController@inserir');
 
-$r->post('/categoria/novo', 'Gatos\Controllers\CategoriaController@novo');
+$r->post('/categoria/novo', 'Gatos\Controllers\GatosController@novo');
 
 #ROTAS
 
