@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Gatos\Controllers;
+namespace P1_PHP\Gatos\Controllers;
 
 class HomeController{
 

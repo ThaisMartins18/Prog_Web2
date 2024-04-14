@@ -1,10 +1,10 @@
 <?php
 
-namespace Gatos\Models\DAO;
+namespace P1_PHP\Models\DAO;
 
-use Gatos\Models\Domain\Categoria;
+use P1_PHP\Models\Domain\Gatos;
 
-class CategoriaDAO{
+class GatosDAO{
 
     private Conexao $conexao;
 
@@ -12,11 +12,11 @@ class CategoriaDAO{
         $this->conexao = new Conexao();
     }
 
-    public function inserir(Categoria $categoria){
+    public function inserir(Gatos $gatos){
         try{
-            $sql = "INSERT INTO categoria (descricao) VALUES (:descricao)";
+            $sql = "INSERT INTO gatos (cor_pelagem) VALUES (:cor_pelagem)";
             $p = $this->conexao->getConexao()->prepare($sql);
-            $p->bindValue(":descricao", $categoria->getDescricao());
+            $p->bindValue(":cor_pelagem", $gatos->getCorPelagem());
             return $p->execute();
         } catch(\Exception $e){
             return 0;

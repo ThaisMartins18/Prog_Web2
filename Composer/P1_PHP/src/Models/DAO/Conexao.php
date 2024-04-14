@@ -1,6 +1,6 @@
 <?php
 
-namespace Gatos\Models\DAO;
+namespace P1_PHP\Models\DAO;
 
 use PDO;
 
