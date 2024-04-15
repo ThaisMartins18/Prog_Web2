@@ -5,48 +5,103 @@ require __DIR__."/vendor/autoload.php";
 $metodo = $_SERVER['REQUEST_METHOD'];
 $caminho = $_SERVER['PATH_INFO'] ?? '/';
 
-#use Gatos\Router
-$r = new Gatos\Router($metodo, $caminho);
+use Gatos\Router as Rout;
+// use Contas\Router as ContasRouter;
+// use Livros\Router as LivrosRouter;
+// use Pizzas\Router as PizzasRouter;
+
+$router = new Rout($metodo, $caminho);
+// $router = new ContasRouter($metodo, $caminho);
+// $router = new LivrosRouter($metodo, $caminho);
+// $router = new PizzasRouter($metodo, $caminho);
 
 #ROTAS
 
-$r->get('/olamundo', 
-    'Gatos\Controllers\HomeController@olaMundo');
-
-$r->get('/olapessoa/{nome}', function($params){ 
-    return 'Olá'.$params[1]; 
-} );
-
-$r->get('/inserir_gatos', 
+$router->get('/inserir_gatos', 
     'Gatos\Controllers\HomeController@formExer1');
 
-$r->post('/inserir_gatos/resposta', function(){
-    $cor_pelagem = $_POST['cor_pelagem'];
-    $cor_olhos = $_POST['cor_olhos'];
+$router->post('/inserir_gatos/resposta', function(){
+    $cor_pelagem = $_POST['cor_pelagem'] ?? null;
+    $cor_olhos = $_POST['cor_olhos'] ?? null;
+} );
+
+$router->get('/inserir_contas', 
+    'Contas\Controllers\HomeController@formExer1');
+
+$router->post('/inserir_contas/resposta', function(){
+    $categoria = $_POST['categoria'] ?? null;
+    $descricao = $_POST['descricao'] ?? null;
 });
 
-/*$r->get('/exer4/formulario', function(){
-    require_once('exer4.html');
+$router->get('/inserir_livros', 
+    'Livros\Controllers\HomeController@formExer1');
+
+$router->post('/inserir_livros/resposta', function(){
+    $titulo = $_POST['titulo'] ?? null;
+    $autor = $_POST['autor'] ?? null;
 });
 
-$r->post('/exer4/resposta', function(){
-    $valor = $_POST['valor1'];
-    $resposta = "";
-    for ($i=1; $i<=10; $i++){
-        $resultado = $valor * $i;
-        $resposta .= "$valor x $i = $resultado<br/>";
-    }
-    return $resposta;
-});*/
+$router->get('/inserir_pizzas', 
+    'Pizzas\Controllers\HomeController@formExer1');
+
+$router->post('/inserir_pizzas/resposta', function(){
+    $sabor = $_POST['sabor'] ?? null;
+    $peso = $_POST['peso'] ?? null;
+});
+
 
 //Chamando o formulário para inserir categoria
-$r->get('/gatos/inserir', 'Gatos\Controllers\GatosController@inserir');
+$router->get('/gatos/inserir', 'Gatos\Controllers\GatosController@inserir');
 
-$r->post('/gatos/novo', 'Gatos\Controllers\GatosController@novo');
+$router->post('/gatos/novo', 'Gatos\Controllers\GatosController@novo');
+
+$router->get('/contas/inserir', 'Gatos\Controllers\ContasController@inserir');
+
+$router->post('/contas/novo', 'Gatos\Controllers\ContasController@novo');
+
+$router->get('/livros/inserir', 'Livros\Controllers\LivrosController@inserir');
+
+$router->post('/livros/novo', 'Livros\Controllers\LivrosController@novo');
+
+$router->get('/pizzas/inserir', 'Pizzas\Controllers\PizzasController@inserir');
+
+$router->post('/pizzas/novo', 'Pizzas\Controllers\PizzasController@novo');
+
+// $routerUsado = null;
+// if ($router->matchRoute()) {
+//     $routerUsado = $router;
+// } elseif ($router->matchRoute()) {
+//     $routerUsado = $router;
+// } elseif ($router->matchRoute()) {
+//     $routerUsado = $router;
+// } elseif ($router->matchRoute()) {
+//     $routerUsado = $router;
+// } 
+
+// Se nenhum roteador corresponder ao caminho, retornar 404
+// if (!$routerUsado) {
+//     http_response_code(404);
+//     echo "Página não encontrada!";
+//     die();
+// }
+
+
+// Manipulando a solicitação usando o roteador correto
+$resultado = $router->handler();
+
+// Tratando o resultado
+if ($resultado instanceof Closure) {
+    echo $resultado($router->getParams());
+} elseif (is_string($resultado)) {
+    $resultado = explode("@", $resultado);
+    $controller = new $resultado[0];
+    $resultado = $resultado[1];
+    echo $controller->$resultado($router->getParams());
+}
 
 #ROTAS
 
-$resultado = $r->handler();
+/*$resultado = $router->handler() ?? $router->handler();
 
 if(!$resultado){
     http_response_code(404);
@@ -55,10 +110,11 @@ if(!$resultado){
 }
 
 if ($resultado instanceof Closure){
-    echo $resultado($r->getParams());
+    echo $resultado($router->getParams() ?? $router->getParams());
 } elseif (is_string($resultado)){
     $resultado = explode("@", $resultado);
     $controller = new $resultado[0];
     $resultado = $resultado[1];
-    echo $controller->$resultado($r->getParams());
+    echo $controller->$resultado($router->getParams() ?? $router->getParams());
 }
+*/
