@@ -1,8 +1,8 @@
 <?php
 
-namespace Pizzas\Models\DAO;
+namespace Gatos\Models\DAO;
 
-use Pizzas\Models\Domain\Pizzas;
+use Gatos\Models\Domain\Pizzas;
 
 class PizzasDAO{
 

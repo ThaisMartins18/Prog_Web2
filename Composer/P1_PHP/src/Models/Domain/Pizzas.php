@@ -1,6 +1,6 @@
 <?php
 
-namespace Pizzas\Models\Domain;
+namespace Gatos\Models\Domain;
 
 class Pizzas{
 

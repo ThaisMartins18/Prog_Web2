@@ -59,13 +59,13 @@ $router->get('/contas/inserir', 'Gatos\Controllers\ContasController@inserir');
 
 $router->post('/contas/novo', 'Gatos\Controllers\ContasController@novo');
 
-$router->get('/livros/inserir', 'Livros\Controllers\LivrosController@inserir');
+$router->get('/livros/inserir', 'Gatos\Controllers\LivrosController@inserir');
 
-$router->post('/livros/novo', 'Livros\Controllers\LivrosController@novo');
+$router->post('/livros/novo', 'Gatos\Controllers\LivrosController@novo');
 
-$router->get('/pizzas/inserir', 'Pizzas\Controllers\PizzasController@inserir');
+$router->get('/pizzas/inserir', 'Gatos\Controllers\PizzasController@inserir');
 
-$router->post('/pizzas/novo', 'Pizzas\Controllers\PizzasController@novo');
+$router->post('/pizzas/novo', 'Gatos\Controllers\PizzasController@novo');
 
 // $routerUsado = null;
 // if ($router->matchRoute()) {

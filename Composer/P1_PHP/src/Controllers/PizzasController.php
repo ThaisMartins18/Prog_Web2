@@ -1,9 +1,9 @@
 <?php
 
-namespace Pizzas\Controllers;
+namespace Gatos\Controllers;
 
-use Pizzas\Models\DAO\PizzasDAO;
-use Pizzas\Models\Domain\Pizzas;
+use Gatos\Models\DAO\PizzasDAO;
+use Gatos\Models\Domain\Pizzas;
 
 class PizzasController{
     public function inserir($params){

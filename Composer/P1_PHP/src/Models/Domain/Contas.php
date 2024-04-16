@@ -1,6 +1,6 @@
 <?php
 
-namespace Contas\Models\Domain;
+namespace Gatos\Models\Domain;
 
 class Contas{
 

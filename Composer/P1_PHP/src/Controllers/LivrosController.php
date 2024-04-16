@@ -1,9 +1,9 @@
 <?php
 
-namespace Livros\Controllers;
+namespace Gatos\Controllers;
 
-use Livros\Models\DAO\LivrosDAO;
-use Livros\Models\Domain\Livros;
+use Gatos\Models\DAO\LivrosDAO;
+use Gatos\Models\Domain\Livros;
 
 class LivrosController{
     public function inserir($params){
@@ -11,7 +11,7 @@ class LivrosController{
     }
 
     public function novo($params){
-        $livros = new Livros(0, $_POST['titulo'],['autor']);
+        $livros = new Livros($_POST['titulo'],['autor']);
         $livrosDAO = new LivrosDAO();
         if ($livrosDAO->inserir($livros)){
             return "Inserido com sucesso!";

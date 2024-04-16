@@ -1,6 +1,6 @@
 <?php
 
-namespace Livros\Models\Domain;
+namespace Gatos\Models\Domain;
 
 class Livros{
 

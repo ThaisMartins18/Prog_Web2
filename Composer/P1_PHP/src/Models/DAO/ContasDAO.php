@@ -1,8 +1,8 @@
 <?php
 
-namespace Contas\Models\DAO;
+namespace Gatos\Models\DAO;
 
-use Contas\Models\Domain\Contas;
+use Gatos\Models\Domain\Contas;
 
 class ContasDAO{
 
@@ -13,20 +13,13 @@ class ContasDAO{
     }
     public function inserir(Contas $contas){
         try{
-            $sql = "INSERT INTO contas (categoria) VALUES (:categoria)";
+            $sql = "INSERT INTO contas (categoria, descricao) VALUES (:categoria, :descricao)";
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":categoria", $contas->getCategoria());
-            return $p->execute();
-        } catch(\Exception $e){
-            return 0;
-        }       
-        try{
-            $sql = "INSERT INTO contas (descricao) VALUES (:descricao)";
-            $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":descricao", $contas->getDescricao());
             return $p->execute();
         } catch(\Exception $e){
             return 0;
-        }    
+        }        
     }
 }
