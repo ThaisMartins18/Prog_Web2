@@ -23,11 +23,6 @@
         } else {
             echo "<p>Tabuada do $numero:</p>";
             for ($i = 0; $i <= 10; $i++) {
-                ?>
-                    <button type="submit" name="calcular" style="
-                        background-color: blueviolet;
-                    ">Calcular</button>
-                <?php
                 echo "<p>$numero X $i = " . ($numero * $i) . "</p>";
             }
         }
