@@ -1,5 +1,6 @@
 php -S localhost:8080 -t public/
 composer update
+composer dump-autoload
 
 Controllers
     pizzascontroller

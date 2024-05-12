@@ -55,17 +55,72 @@ $router->get('/gatos/inserir', 'Gatos\Controllers\GatosController@inserir');
 
 $router->post('/gatos/novo', 'Gatos\Controllers\GatosController@novo');
 
+$router->get('/gatos', 'Gatos\Controllers\GatosController@index');
+
+$router->get('/gatos/{acao}/{status}', 'Gatos\Controllers\GatosController@index');
+
+$router->get('/gatos/alterar/id/{id}', 'Gatos\Controllers\GatosController@alterar');
+
+$router->get('/gatos/excluir/id/{id}', 'Gatos\Controllers\GatosController@excluir');
+
+$router->post('/gatos/editar', 'Gatos\Controllers\GatosController@editar');
+
+$router->post('/gatos/deletar', 'Gatos\Controllers\GatosController@deletar');
+
+
+
+
 $router->get('/contas/inserir', 'Gatos\Controllers\ContasController@inserir');
 
 $router->post('/contas/novo', 'Gatos\Controllers\ContasController@novo');
+
+$router->get('/contas', 'Gatos\Controllers\ContasController@index');
+
+$router->get('/contas/{acao}/{status}', 'Gatos\Controllers\ContasController@index');
+
+$router->get('/contas/alterar/id/{id}', 'Gatos\Controllers\ContasController@alterar');
+
+$router->get('/contas/excluir/id/{id}', 'Gatos\Controllers\ContasController@excluir');
+
+$router->post('/contas/editar', 'Gatos\Controllers\ContasController@editar');
+
+$router->post('/contas/deletar', 'Gatos\Controllers\ContasController@deletar');
+
+
 
 $router->get('/livros/inserir', 'Gatos\Controllers\LivrosController@inserir');
 
 $router->post('/livros/novo', 'Gatos\Controllers\LivrosController@novo');
 
+$router->get('/livros', 'Gatos\Controllers\LivrosController@index');
+
+$router->get('/livros/{acao}/{status}', 'Gatos\Controllers\LivrosController@index');
+
+$router->get('/livros/alterar/id/{id}', 'Gatos\Controllers\LivrosController@alterar');
+
+$router->get('/livros/excluir/id/{id}', 'Gatos\Controllers\LivrosController@excluir');
+
+$router->post('/livros/editar', 'Gatos\Controllers\LivrosController@editar');
+
+$router->post('/livros/deletar', 'Gatos\Controllers\LivrosController@deletar');
+
+
+
 $router->get('/pizzas/inserir', 'Gatos\Controllers\PizzasController@inserir');
 
 $router->post('/pizzas/novo', 'Gatos\Controllers\PizzasController@novo');
+
+$router->get('/pizzas', 'Gatos\Controllers\PizzasController@index');
+
+$router->get('/pizzas/{acao}/{status}', 'Gatos\Controllers\PizzasController@index');
+
+$router->get('/pizzas/alterar/id/{id}', 'Gatos\Controllers\PizzasController@alterar');
+
+$router->get('/pizzas/excluir/id/{id}', 'Gatos\Controllers\PizzasController@excluir');
+
+$router->post('/pizzas/editar', 'Gatos\Controllers\PizzasController@editar');
+
+$router->post('/pizzas/deletar', 'Gatos\Controllers\PizzasController@deletar');
 
 // $routerUsado = null;
 // if ($router->matchRoute()) {

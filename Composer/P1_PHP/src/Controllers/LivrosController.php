@@ -11,7 +11,7 @@ class LivrosController{
     }
 
     public function novo($params){
-        $livros = new Livros($_POST['titulo'],['autor']);
+        $livros = new Livros($_POST['titulo'],$_POST['autor']);
         $livrosDAO = new LivrosDAO();
         if ($livrosDAO->inserir($livros)){
             return "Inserido com sucesso!";
