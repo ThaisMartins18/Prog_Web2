@@ -4,12 +4,23 @@ namespace Gatos\Models\Domain;
 
 class Gatos{
 
+    private $id;
     private $cor_pelagem;
     private $cor_olhos;
 
-    public function __construct($cor_pelagem, $cor_olhos){
+
+    public function __construct($id, $cor_pelagem, $cor_olhos){
+        $this->setId($id);
         $this->setCorPelagem($cor_pelagem);
         $this->setCorOlhos($cor_olhos);
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setId($id){
+        $this->id = $id;
     }
 
     public function getCorPelagem(){
@@ -27,6 +38,5 @@ class Gatos{
     public function setCorOlhos($cor_olhos){
         $this->cor_olhos = $cor_olhos;
     }
-
 
 }

@@ -31,7 +31,7 @@ class GatosDAO{
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":cor_pelagem", $gatos->getCorPelagem());
             $p->bindValue(":cor_olhos", $gatos->getCorOlhos());
-//            $p->bindValue(":id", $gatos->getId());
+            $p->bindValue(":id", $gatos->getId());
             return $p->execute();
         }catch(\Exception $e){
             return 0;

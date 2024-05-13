@@ -33,7 +33,7 @@ class GatosController{
     }
 
     public function novo($params){
-        $gatos = new Gatos($_POST['cor_pelagem'],$_POST['cor_olhos']);
+        $gatos = new Gatos($_POST['id'], $_POST['cor_pelagem'],$_POST['cor_olhos']);
         $gatosDAO = new GatosDAO();
         if ($gatosDAO->inserir($gatos)){
             return "Inserido com sucesso!";
