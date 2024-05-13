@@ -52,6 +52,7 @@ class PizzasDAO{
         try{
             $sql = "SELECT * FROM pizzas";
             return $this->conexao->getConexao()->query($sql);
+            
         } catch(\Exception $e){
             return 0;
         }

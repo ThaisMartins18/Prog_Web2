@@ -15,10 +15,12 @@ class PizzasController{
             $mensagem = "Registro inserido com sucesso!";
         elseif($acao == "inserir" && $status == "false")
             $mensagem = "Erro ao inserir!";
+
         elseif($acao == "alterar" && $status == "true")
             $mensagem = "Registro alterado com sucesso!";
         elseif($acao == "alterar" && $status == "false")
             $mensagem = "Erro ao alterar!";
+        
         elseif($acao == "excluir" && $status == "true")
             $mensagem = "Registro excluído com sucesso!";
         elseif($acao == "excluir" && $status == "false")
@@ -33,7 +35,7 @@ class PizzasController{
     }
 
     public function novo($params){
-        $pizzas = new Pizzas(0, $_POST['sabor'],['peso']);
+        $pizzas = new Pizzas($_POST['sabor'],$_POST['peso']);
         $pizzasDAO = new PizzasDAO();
         if ($pizzasDAO->inserir($pizzas)){
             return "Inserido com sucesso!";
