@@ -1,9 +1,9 @@
 <?php
 
-namespace Contas\Controllers;
+namespace Gatos\Controllers;
 
-use Contas\Models\DAO\ContasDAO;
-use Contas\Models\Domain\Contas;
+use Gatos\Models\DAO\ContasDAO;
+use Gatos\Models\Domain\Contas;
 
 class ContasController{
     public function index($params){

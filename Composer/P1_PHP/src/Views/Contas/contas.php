@@ -17,7 +17,6 @@
             <thead>
                 <tr>
                     <th> Categoria </th>
-                    <th></th>
                     <th> Descrição </th>
                     <th></th>
                 </tr>
@@ -28,14 +27,6 @@
                     ?>
                         <tr>
                             <td><?= $c['categoria'] ?></td>
-                            <td>
-                                <a href="/contas/alterar/id/<?=$c["id"]?>" class="btn btn-warning">
-                                    Alterar
-                                </a>
-                                <a href="/contas/excluir/id/<?=$c["id"]?>" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
                             <td><?= $c['descricao'] ?></td>
                             <td>
                                 <a href="/contas/alterar/id/<?=$c["id"]?>" class="btn btn-warning">

@@ -25,12 +25,12 @@ class ContasDAO{
 
     public function alterar(Contas $contas){
         try{
-            $sql = "UPDATE contas SET categoria, descricao = :categoria, :descricao 
+            $sql = "UPDATE contas SET categoria = :categoria, descricao = :descricao 
                     WHERE id = :id";
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":categoria", $contas->getCategoria());
             $p->bindValue(":descricao", $contas->getDescricao());
-//            $p->bindValue(":id", $contas->getId());
+            $p->bindValue(":id", $contas->getId());
             return $p->execute();
         }catch(\Exception $e){
             return 0;

@@ -17,7 +17,6 @@
             <thead>
                 <tr>
                     <th> Sabor </th>
-                    <th></th>
                     <th> Peso </th>
                     <th></th>
                 </tr>
@@ -28,14 +27,6 @@
                     ?>
                         <tr>
                             <td><?= $c['sabor'] ?></td>
-                            <td>
-                                <a href="/pizzas/alterar/id/<?=$c["id"]?>" class="btn btn-warning">
-                                    Alterar
-                                </a>
-                                <a href="/pizzas/excluir/id/<?=$c["id"]?>" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
                             <td><?= $c['peso'] ?></td>
                             <td>
                                 <a href="/pizzas/alterar/id/<?=$c["id"]?>" class="btn btn-warning">

@@ -17,7 +17,6 @@
             <thead>
                 <tr>
                     <th> Cor da Pelagem </th>
-                    <th></th>
                     <th> Cor dos Olhos </th>
                     <th></th>
                 </tr>
@@ -28,14 +27,6 @@
                     ?>
                         <tr>
                             <td><?= $c['cor_pelagem'] ?></td>
-                            <td>
-                                <a href="/gatos/alterar/id/<?=$c["id"]?>" class="btn btn-warning">
-                                    Alterar
-                                </a>
-                                <a href="/gatos/excluir/id/<?=$c["id"]?>" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
                             <td><?= $c['cor_olhos'] ?></td>
                             <td>
                                 <a href="/gatos/alterar/id/<?=$c["id"]?>" class="btn btn-warning">

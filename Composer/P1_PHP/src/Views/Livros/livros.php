@@ -17,7 +17,6 @@
             <thead>
                 <tr>
                     <th> Título </th>
-                    <th></th>
                     <th> Autor </th>
                     <th></th>
                 </tr>
@@ -28,14 +27,6 @@
                     ?>
                         <tr>
                             <td><?= $c['titulo'] ?></td>
-                            <td>
-                                <a href="/livros/alterar/id/<?=$c["id"]?>" class="btn btn-warning">
-                                    Alterar
-                                </a>
-                                <a href="/livros/excluir/id/<?=$c["id"]?>" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
                             <td><?= $c['autor'] ?></td>
                             <td>
                                 <a href="/livros/alterar/id/<?=$c["id"]?>" class="btn btn-warning">
