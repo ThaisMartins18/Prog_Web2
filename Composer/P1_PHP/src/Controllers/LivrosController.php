@@ -55,7 +55,11 @@ class LivrosController{
     }
 
     public function editar($params){
+<<<<<<< HEAD
         $livros = new Livros($_POST['titulo'], $_POST['autor']);
+=======
+        $livros = new Livros($_POST['id'], $_POST['titulo'], $_POST['autor']);
+>>>>>>> b64bd0123caab28fde88f3847c3536aa42b69999
         $livrosDAO = new LivrosDAO();
         if ($livrosDAO->alterar($livros)) {
             header("location: /livros/alterar/true");

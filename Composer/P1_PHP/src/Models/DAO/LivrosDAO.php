@@ -25,7 +25,11 @@ class LivrosDAO{
 
     public function alterar(Livros $livros){
         try{
+<<<<<<< HEAD
             $sql = "UPDATE livros SET titulo = :titulo, autor = :autor 
+=======
+            $sql = "UPDATE livros SET titulo, autor = :titulo, :autor 
+>>>>>>> b64bd0123caab28fde88f3847c3536aa42b69999
                     WHERE id = :id";
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":titulo", $livros->getTitulo());
