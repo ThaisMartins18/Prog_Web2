@@ -15,10 +15,12 @@ class ContasController{
             $mensagem = "Registro inserido com sucesso!";
         elseif($acao == "inserir" && $status == "false")
             $mensagem = "Erro ao inserir!";
+
         elseif($acao == "alterar" && $status == "true")
             $mensagem = "Registro alterado com sucesso!";
         elseif($acao == "alterar" && $status == "false")
             $mensagem = "Erro ao alterar!";
+        
         elseif($acao == "excluir" && $status == "true")
             $mensagem = "Registro excluído com sucesso!";
         elseif($acao == "excluir" && $status == "false")
@@ -33,7 +35,7 @@ class ContasController{
     }
 
     public function novo($params){
-        $contas = new Contas($_POST['categoria'],$_POST['descricao']);
+        $contas = new Contas($_POST['id'], $_POST['categoria'],$_POST['descricao']);
         $contasDAO = new ContasDAO();
         if ($contasDAO->inserir($contas)){
             return "Inserido com sucesso!";

@@ -15,17 +15,19 @@ class LivrosController{
             $mensagem = "Registro inserido com sucesso!";
         elseif($acao == "inserir" && $status == "false")
             $mensagem = "Erro ao inserir!";
+
         elseif($acao == "alterar" && $status == "true")
             $mensagem = "Registro alterado com sucesso!";
         elseif($acao == "alterar" && $status == "false")
             $mensagem = "Erro ao alterar!";
+
         elseif($acao == "excluir" && $status == "true")
             $mensagem = "Registro excluído com sucesso!";
         elseif($acao == "excluir" && $status == "false")
             $mensagem = "Erro ao excluir!";
         else 
             $mensagem = "";
-        require_once("../src/Views/gatos/gatos.php");
+        require_once("../src/Views/livros/livros.php");
     }
     
     public function inserir($params){
@@ -33,7 +35,7 @@ class LivrosController{
     }
 
     public function novo($params){
-        $livros = new Livros($_POST['titulo'],$_POST['autor']);
+        $livros = new Livros($_POST['id'], $_POST['titulo'],$_POST['autor']);
         $livrosDAO = new LivrosDAO();
         if ($livrosDAO->inserir($livros)){
             return "Inserido com sucesso!";
@@ -55,11 +57,7 @@ class LivrosController{
     }
 
     public function editar($params){
-<<<<<<< HEAD
-        $livros = new Livros($_POST['titulo'], $_POST['autor']);
-=======
         $livros = new Livros($_POST['id'], $_POST['titulo'], $_POST['autor']);
->>>>>>> b64bd0123caab28fde88f3847c3536aa42b69999
         $livrosDAO = new LivrosDAO();
         if ($livrosDAO->alterar($livros)) {
             header("location: /livros/alterar/true");
