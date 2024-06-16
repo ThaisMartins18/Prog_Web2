@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MensagemController;
-use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\GatoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,8 +11,8 @@ Route::get('/', function () {
 Route::get("/mensagem/{mensagem}", [MensagemController::class, 'mostrarMensagem']);
 
 Route::resources([
-    'clientes' => ClienteController::class,
+    'gatos' => GatoController::class,
     #produtos => ProdutosController::class
 ]);
 
-Route::get('/clientes/delete/{id}', [ClienteController::class,'delete']);
+Route::get('/gatos/delete/{id}', [GatoController::class,'delete']);

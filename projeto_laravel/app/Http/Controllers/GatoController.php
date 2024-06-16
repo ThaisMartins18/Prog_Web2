@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Gato;
 
-class ClienteController extends Controller
+class GatoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class ClienteController extends Controller
     public function index()
     {
         //
-        $clientes = Cliente::all();
-        return view("cliente.index",compact('clientes'));
+        $gatos = Gato::all();
+        return view("gato.index",compact('gatos'));
     }
 
     /**
@@ -22,9 +22,9 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //Mostrar formulário de cadastro do cliente
+        //Mostrar formulário de cadastro do gato
         //Método Get
-        return view('cliente.create');
+        return view('gato.create');
     }
 
     /**
@@ -32,12 +32,12 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        Cliente::create([
+        Gato::create([
             'nome' => $request->input('nome'),
-            'telefone' => $request->input('telefone'),
-            'email' => $request->input('email')
+            'cor' => $request->input('cor'),
+            'genero' => $request->input('genero')
         ]);
-        dd(Cliente::all()->toArray());
+        dd(Gato::all()->toArray());
 }
 
     /**
@@ -54,8 +54,8 @@ class ClienteController extends Controller
     public function edit(string $id)
     {
         //
-        $cliente = Cliente::findOrFail($id);
-        return view("cliente.edit",compact('cliente'));
+        $gato = Gato::findOrFail($id);
+        return view("gato.edit",compact('gato'));
     }
 
     /**
@@ -64,11 +64,11 @@ class ClienteController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $cliente = Cliente::findOrFail($id);
-        $cliente->update([
+        $gato = Gato::findOrFail($id);
+        $gato->update([
             'nome' => $request->input('nome'),
-            'telefone' => $request->input('telefone'),
-            'email' => $request->input('email')
+            'cor' => $request->input('cor'),
+            'genero' => $request->input('genero')
         ]);
         return 'Registro alterado com sucesso!';
     }
@@ -79,8 +79,8 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
-        $cliente = Cliente::findOrFail($id);
-        $cliente->delete();
+        $gato = Gato::findOrFail($id);
+        $gato->delete();
         return "Registro excluído com sucesso!";
     }
 
@@ -88,7 +88,7 @@ class ClienteController extends Controller
         //Método Get
         //Mostrar o formulário com os dados antes de excluir
 
-        $cliente = Cliente::findOrFail($id);
-        return view("cliente.delete",compact('cliente'));
+        $gato = Gato::findOrFail($id);
+        return view("gato.delete",compact('gato'));
     }
 }
