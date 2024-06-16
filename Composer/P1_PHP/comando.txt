@@ -13,7 +13,7 @@ DAO
 
 Domain
     pizzas
-    gatosc
+    gatos
 
 Views
     pizzas<--pasta

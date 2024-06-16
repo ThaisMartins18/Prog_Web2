@@ -25,16 +25,12 @@ class PizzasDAO{
 
     public function alterar(Pizzas $pizzas){
         try{
-<<<<<<< HEAD
             $sql = "UPDATE pizzas SET sabor = :sabor, peso = :peso 
-=======
-            $sql = "UPDATE pizzas SET sabor, peso = :sabor, :peso 
->>>>>>> b64bd0123caab28fde88f3847c3536aa42b69999
                     WHERE id = :id";
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->bindValue(":sabor", $pizzas->getSabor());
             $p->bindValue(":peso", $pizzas->getPeso());
-//            $p->bindValue(":id", $pizzas->getId());
+            $p->bindValue(":id", $pizzas->getId());
             return $p->execute();
         }catch(\Exception $e){
             return 0;

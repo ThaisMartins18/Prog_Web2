@@ -35,7 +35,7 @@ class PizzasController{
     }
 
     public function novo($params){
-        $pizzas = new Pizzas($_POST['sabor'],$_POST['peso']);
+        $pizzas = new Pizzas($_POST[''], $_POST['sabor'],$_POST['peso']);
         $pizzasDAO = new PizzasDAO();
         if ($pizzasDAO->inserir($pizzas)){
             return "Inserido com sucesso!";
@@ -57,11 +57,7 @@ class PizzasController{
     }
 
     public function editar($params){
-<<<<<<< HEAD
-        $pizzas = new Pizzas($_POST['sabor'], $_POST['peso']);
-=======
         $pizzas = new Pizzas($_POST['id'], $_POST['sabor'], $_POST['peso']);
->>>>>>> b64bd0123caab28fde88f3847c3536aa42b69999
         $pizzasDAO = new PizzasDAO();
         if ($pizzasDAO->alterar($pizzas)) {
             header("location: /pizzas/alterar/true");
